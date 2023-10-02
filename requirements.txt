@@ -5,7 +5,7 @@ scikit-learn
 pydub
 pynormalize
 soundfile
-librosa
+librosa==0.8.0
 pysptk
 pyworld
 resemblyzer
