@@ -429,7 +429,7 @@ class Image_translation_block():
         if(filename is None):
             filename = 'v'
         os.system('ffmpeg -loglevel error -y -i out.mp4 -i {} -pix_fmt yuv420p -strict -2 {}.mp4'.format(
-            '/content/audio.wav',
+            '/content/'+filename[9:-16]+'.wav',
             prefix))
         # os.system('rm out.mp4')
 
