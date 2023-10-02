@@ -81,10 +81,10 @@ class Audio2landmark_model():
         with open(os.path.join('examples', 'dump', 'emb.pickle'), 'rb') as fp:
             self.test_embs = pickle.load(fp)
 
-        print('====================================')
-        for key in self.test_embs.keys():
-            print(key)
-        print('====================================')
+        #print('====================================')
+        #for key in self.test_embs.keys():
+        #    print(key)
+        #print('====================================')
 
     def __train_face_and_pos__(self, fls, aus, embs, face_id, smooth_win=31, close_mouth_ratio=.99):
 
