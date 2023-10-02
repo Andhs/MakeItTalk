@@ -406,8 +406,8 @@ class Image_translation_block():
 
             g_out = g_out.cpu().detach().numpy().transpose((0, 2, 3, 1))
             g_out[g_out < 0] = 0
-            ref_in = image_in[:, 3:6, :, :].cpu().detach().numpy().transpose((0, 2, 3, 1))
-            fls_in = image_in[:, 0:3, :, :].cpu().detach().numpy().transpose((0, 2, 3, 1))
+            # ref_in = image_in[:, 3:6, :, :].cpu().detach().numpy().transpose((0, 2, 3, 1))
+            # fls_in = image_in[:, 0:3, :, :].cpu().detach().numpy().transpose((0, 2, 3, 1))
             # g_out = g_out.cpu().detach().numpy().transpose((0, 3, 2, 1))
             # g_out[g_out < 0] = 0
             # ref_in = image_in[:, 3:6, :, :].cpu().detach().numpy().transpose((0, 3, 2, 1))
