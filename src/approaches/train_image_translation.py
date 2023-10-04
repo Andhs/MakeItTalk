@@ -8,7 +8,7 @@
  
 """
 
-from src.models.model_image_translation import ResUnetGenerator, VGGLoss
+#from src.models.model_image_translation import ResUnetGenerator, VGGLoss
 import torch
 import torch.nn as nn
 #from tensorboardX import SummaryWriter
@@ -16,7 +16,7 @@ import time
 import numpy as np
 import cv2
 import os, glob
-from src.dataset.image_translation.image_translation_dataset import vis_landmark_on_img, vis_landmark_on_img98, vis_landmark_on_img74
+from src.dataset.image_translation.image_translation_dataset import vis_landmark_on_img #, vis_landmark_on_img98, vis_landmark_on_img74
 
 
 #from thirdparty.AdaptiveWingLoss.core import models
@@ -34,13 +34,13 @@ class Image_translation_block():
         # for key in vars(opt_parser).keys():
         #     print(key, ':', vars(opt_parser)[key])
         self.opt_parser = opt_parser
-
+        """
         # model
         if(opt_parser.add_audio_in):
             self.G = ResUnetGenerator(input_nc=7, output_nc=3, num_downs=6, use_dropout=False)
         else:
             self.G = ResUnetGenerator(input_nc=6, output_nc=3, num_downs=6, use_dropout=False)
-
+        """
         if (opt_parser.load_G_name != ''):
             ckpt = torch.load(opt_parser.load_G_name)
             try:
@@ -137,7 +137,7 @@ class Image_translation_block():
                                                                   device='cuda' if torch.cuda.is_available() else "cpu",
                                                                   flip_input=True)
         """
-
+    """
     def __train_pass__(self, epoch, is_training=True):
         st_epoch = time.time()
         if(is_training):
@@ -367,7 +367,7 @@ class Image_translation_block():
             os.system('ffmpeg -y -i tmp_{:04d}.mp4 -pix_fmt yuv420p random_{:04d}.mp4'.format(i, i))
             os.system('rm tmp_{:04d}.mp4'.format(i))
 
-
+    """
     def single_test(self, jpg=None, fls=None, filename=None, prefix='', grey_only=False):
         import time
         st = time.time()
