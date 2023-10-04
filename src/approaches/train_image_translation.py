@@ -8,7 +8,7 @@
  
 """
 
-#from src.models.model_image_translation import ResUnetGenerator, VGGLoss
+from src.models.model_image_translation import ResUnetGenerator #, VGGLoss
 import torch
 import torch.nn as nn
 #from tensorboardX import SummaryWriter
@@ -34,13 +34,12 @@ class Image_translation_block():
         # for key in vars(opt_parser).keys():
         #     print(key, ':', vars(opt_parser)[key])
         self.opt_parser = opt_parser
-        """
+        
         # model
         if(opt_parser.add_audio_in):
             self.G = ResUnetGenerator(input_nc=7, output_nc=3, num_downs=6, use_dropout=False)
         else:
-        """
-        self.G = ResUnetGenerator(input_nc=6, output_nc=3, num_downs=6, use_dropout=False)
+            self.G = ResUnetGenerator(input_nc=6, output_nc=3, num_downs=6, use_dropout=False)
  
         if (opt_parser.load_G_name != ''):
             ckpt = torch.load(opt_parser.load_G_name)
