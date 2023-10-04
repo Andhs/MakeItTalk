@@ -11,7 +11,7 @@
 from src.models.model_image_translation import ResUnetGenerator, VGGLoss
 import torch
 import torch.nn as nn
-from tensorboardX import SummaryWriter
+#from tensorboardX import SummaryWriter
 import time
 import numpy as np
 import cv2
@@ -19,8 +19,8 @@ import os, glob
 from src.dataset.image_translation.image_translation_dataset import vis_landmark_on_img, vis_landmark_on_img98, vis_landmark_on_img74
 
 
-from thirdparty.AdaptiveWingLoss.core import models
-from thirdparty.AdaptiveWingLoss.utils.utils import get_preds_fromhm
+#from thirdparty.AdaptiveWingLoss.core import models
+#from thirdparty.AdaptiveWingLoss.utils.utils import get_preds_fromhm
 
 import face_alignment
 
@@ -56,7 +56,7 @@ class Image_translation_block():
             self.G = nn.DataParallel(self.G)
 
         self.G.to(device)
-
+        """
         if(not single_test):
             # dataset
             if(opt_parser.use_vox_dataset == 'raw'):
@@ -136,6 +136,7 @@ class Image_translation_block():
                     self.predictor = face_alignment.FaceAlignment(face_alignment.LandmarksType._3D,
                                                                   device='cuda' if torch.cuda.is_available() else "cpu",
                                                                   flip_input=True)
+        """
 
     def __train_pass__(self, epoch, is_training=True):
         st_epoch = time.time()
