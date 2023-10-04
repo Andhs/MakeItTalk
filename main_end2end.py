@@ -8,8 +8,8 @@
  
 """
 
-import sys
-sys.path.append('thirdparty/AdaptiveWingLoss')
+#import sys
+#sys.path.append('thirdparty/AdaptiveWingLoss')
 import os, glob
 import numpy as np
 import cv2
