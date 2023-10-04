@@ -39,8 +39,9 @@ class Image_translation_block():
         if(opt_parser.add_audio_in):
             self.G = ResUnetGenerator(input_nc=7, output_nc=3, num_downs=6, use_dropout=False)
         else:
-            self.G = ResUnetGenerator(input_nc=6, output_nc=3, num_downs=6, use_dropout=False)
         """
+        self.G = ResUnetGenerator(input_nc=6, output_nc=3, num_downs=6, use_dropout=False)
+ 
         if (opt_parser.load_G_name != ''):
             ckpt = torch.load(opt_parser.load_G_name)
             try:
