@@ -32,7 +32,7 @@ class AutoVC_mel_Convertor():
         self.selected_filenames = [self.filenames[i] for i in selected_index]
 
         print('{} out of {} are in this portion'.format(len(self.selected_filenames), len(self.filenames)))
-
+    """
     def __convert_single_only_au_AutoVC_format_to_dataset__(self, filename, build_train_dataset=True):
         """
         Convert a single file (only audio in AutoVC embedding format) to numpy arrays
@@ -195,7 +195,7 @@ class AutoVC_mel_Convertor():
 
         return aus
 
-
+    """
     def convert_single_wav_to_autovc_input(self, audio_filename, autovc_model_path):
 
 
