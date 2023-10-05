@@ -34,12 +34,12 @@ class AutoVC_mel_Convertor():
         print('{} out of {} are in this portion'.format(len(self.selected_filenames), len(self.filenames)))
     """
     def __convert_single_only_au_AutoVC_format_to_dataset__(self, filename, build_train_dataset=True):
-        """
+        '''
         Convert a single file (only audio in AutoVC embedding format) to numpy arrays
         :param filename:
         :param is_map_to_std_face:
         :return:
-        """
+        '''
 
         global_clip_index, video_name = filename
 
