@@ -7,7 +7,7 @@ from src.autovc.retrain_version.model_vc_37_1 import Generator
 from pydub import AudioSegment
 import pynormalize.pynormalize
 from scipy.io import  wavfile as wav
-from scipy.signal import stft
+#from scipy.signal import stft
 
 
 def match_target_amplitude(sound, target_dBFS):
